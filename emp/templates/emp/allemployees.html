@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="text-center">All Employees</h4>
+<div class="container card p-3">
+    <h5 class="text-success">List of employees</h5>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Email</th>
+                <th scope="col">Employee Address</th>
+                <th scope="col">Employee Cellphone</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% if allemployees %}
+                {% for eachemployee in allemployees %}
+              <tr>
+                <!-- <th scope="row">{{ forloop.counter }}</th> -->
+                <th scope="row">{{ eachemployee.id }}</th>
+                <td>{{eachemployee.employeeid}}</td>
+                <td>{{eachemployee.employeename}}</td>
+                <td>{{eachemployee.email}}</td>
+                <td>{{eachemployee.address}}</td>
+                <td>{{eachemployee.phone}}</td>
+                <td><a class="btn btn-sm btn-outline-success" href="{% url 'updateemployee' eachemployee.id %}">Update</a></td>
+                <td><a class="btn btn-sm btn-outline-danger" href="{% url 'deleteemployee' eachemployee.id %}">delete</a></td>
+              </tr>
+                {% endfor %} 
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

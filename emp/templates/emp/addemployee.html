@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="text-center">Add new employee</h4>
+<div class="card p-5">
+    <form action="/addemployee/" method="POST">
+        {% csrf_token %}
+        <div class="mb-1">
+          <label for="exampleInputEmail1" class="form-label">Employee Id</label>
+          <input type="text" class="form-control" name="employeeid" placeholder="Enter employee Id">
+        </div>
+        <div class="mb-1">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control" name="employeename" placeholder="Enter the name of the employee">
+        </div>
+        <div class="mb-1">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Enter email of the employee">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Cellphone</label>
+          <input type="text" class="form-control" name="cellphone" placeholder="Enter cellphone number of the employee">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Address</label>
+          <input type="text" class="form-control" name="address" placeholder="Enter address of the employee">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-success">Add Employee</button> 
+        </div>
+       
+      </form>
+</div>
+
+{% endblock content %}
