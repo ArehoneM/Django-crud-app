@@ -37,7 +37,7 @@ This is a basic Django project implementing Create, Read, Update, and Delete (CR
 
 ## Project Structure
 
-- `app_name/`: The Django app handling CRUD operations
+- `emp/`: The Django app handling CRUD operations
 - `templates/`: HTML templates for the views
 
 This project is open-source, feel free to use it and modify it.
